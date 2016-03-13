@@ -9,9 +9,10 @@
 #
 #
 
+MALI_CUSTOMER_RELEASE = 1
 
-menu "ARM GPU Configuration"
-source "drivers/gpu/arm/t6xx/kbase/Kconfig"
-source "drivers/gpu/arm/midgard_wk04/Kconfig"
-source "drivers/gpu/arm/mali400/Kconfig"
-endmenu
+obj-y += mali_kbase_config_5420.o
+
+obj-$(CONFIG_MALI_MIDGARD_WK04) += mali_kbase_platform.o
+obj-$(CONFIG_MALI_MIDGARD_WK04) += mali_kbase_dvfs.o
+
